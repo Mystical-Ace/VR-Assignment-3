@@ -20,8 +20,8 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - smoke
+  - fire
   - 
   - 
   - 
@@ -48,6 +48,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: fire effects
+    uniqueID: 894141647
+    locked: 0
+  - name: fire
+    uniqueID: 140487285
     locked: 0
   m_RenderingLayers:
   - Default
