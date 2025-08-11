@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Assignment2/Scenes/EscapeRoomVR.unity
-    guid: 65a71ea4ad02b62409db24d0424abded
+    path: Assets/Dustin/Scenes/GameScene.unity
+    guid: d67bd4aaa4f861b4c8423a4c45571c2b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 85db72261c5aca84fb29d86d495703ce, type: 2}
