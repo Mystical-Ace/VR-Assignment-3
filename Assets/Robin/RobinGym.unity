@@ -163,7 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa991bbd7d56e65449ce54e58716c927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFoamValue: 20
+  maxFoamValue: 100
+  interval: 0.05
 --- !u!1 &292432176
 GameObject:
   m_ObjectHideFlags: 0
