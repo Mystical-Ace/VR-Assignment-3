@@ -1,20 +1,24 @@
 using UnityEngine;
 using System;
-using System.Collections;
 
 public class ExtinguisherStat : MonoBehaviour
 {
     [SerializeField] private float maxFoamValue = 100f;
+    [SerializeField] private bool debugMode = false;
 
     private float currentFoamValue;
-    
-    [NonSerialized] public bool isUsable = true;
+
     [SerializeField] private float interval = 0.1f;
     private float timer = 0f;
 
     private void Awake()
     {
         currentFoamValue = maxFoamValue;
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("Extinguisher is out of foam!");
     }
 
     public void OnExtinguisherUsed(float reducedValue)
@@ -24,29 +28,23 @@ public class ExtinguisherStat : MonoBehaviour
         if (currentFoamValue <= 0)
         {
             currentFoamValue = 0;
-            isUsable = false;
+            enabled = false;
         }
 
-        Debug.Log($"Extinguisher's current foam value: {currentFoamValue}");
+        Debug.Log($"{gameObject.name}'s current foam value: {currentFoamValue}");
     }
 
     //Tests
     private void Update()
     {
+        if (!debugMode) return;
+        
         timer += Time.deltaTime;
 
         if (timer >= interval && Input.GetKey(KeyCode.Space))
         {
             timer = 0f;
-            TestExtinguisherLimitFunctionality();
-        }
-    }
-
-    public void TestExtinguisherLimitFunctionality()
-    {
-        if (!isUsable)
-            Debug.Log("Extinguisher is out of foam!");
-        else
             OnExtinguisherUsed(1f);
+        }
     }
 }
