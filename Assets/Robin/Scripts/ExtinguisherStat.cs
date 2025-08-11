@@ -3,45 +3,48 @@ using System;
 
 public class ExtinguisherStat : MonoBehaviour
 {
-    [SerializeField] private float maxFoamValue = 20f;
+    [SerializeField] private float maxFoamValue = 100f;
+    [SerializeField] private bool debugMode = false;
 
     private float currentFoamValue;
-    
-    [NonSerialized] public bool isUsable = true;
+
+    [SerializeField] private float interval = 0.1f;
+    private float timer = 0f;
 
     private void Awake()
     {
         currentFoamValue = maxFoamValue;
     }
 
+    private void OnDisable()
+    {
+        Debug.Log("Extinguisher is out of foam!");
+    }
+
     public void OnExtinguisherUsed(float reducedValue)
     {
-        if (currentFoamValue <= 0)
-        {
-            isUsable = false;
-            return;
-        }   
-
         currentFoamValue -= reducedValue;
 
-        if (currentFoamValue < 0)
+        if (currentFoamValue <= 0)
+        {
             currentFoamValue = 0;
+            enabled = false;
+        }
 
-        Debug.Log($"Extinguisher's current foam value: {currentFoamValue}");
+        Debug.Log($"{gameObject.name}'s current foam value: {currentFoamValue}");
     }
 
     //Tests
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            TestExtinguisherLimitFunctionality();
-    }
+        if (!debugMode) return;
+        
+        timer += Time.deltaTime;
 
-    public void TestExtinguisherLimitFunctionality()
-    {
-        OnExtinguisherUsed(3f);
-
-        if (!isUsable)
-            Debug.Log("Extinguisher is out of foam!");
+        if (timer >= interval && Input.GetKey(KeyCode.Space))
+        {
+            timer = 0f;
+            OnExtinguisherUsed(1f);
+        }
     }
 }
