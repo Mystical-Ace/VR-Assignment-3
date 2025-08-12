@@ -11,6 +11,7 @@ public class FireController : MonoBehaviour
     private float currentHealth;
     private bool isBeingSprayed = false;
     private List<ParticleInitialValues> initialValues = new List<ParticleInitialValues>();
+    [SerializeField] private Collider fireBlock;
     private struct ParticleInitialValues
     {
         public float startSize;
@@ -44,6 +45,7 @@ public class FireController : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            Destroy(fireBlock);
         }
     }
     public void Douse(float amount)
