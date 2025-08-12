@@ -1,10 +1,14 @@
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
+using System.Buffers;
 
 public class ExtinguisherStat : MonoBehaviour
 {
-    [SerializeField] private float maxFoamValue = 100f;
-    [SerializeField] private bool debugMode = false;
+    [SerializeField] private float maxFoamValue = 1f;
+    //[SerializeField] private bool debugMode = false;
+    public bool sprayOn;
+    [Header("Input")]
 
     private float currentFoamValue;
 
@@ -34,14 +38,25 @@ public class ExtinguisherStat : MonoBehaviour
         Debug.Log($"{gameObject.name}'s current foam value: {currentFoamValue}");
     }
 
+    public void SetSpray(bool spray)
+    {
+        sprayOn = spray;
+    }
     //Tests
     private void Update()
     {
-        if (!debugMode) return;
+        if(sprayOn == true)
+        {
+            ReduceFoam();
+        }
+    }
+    public void ReduceFoam()
+    {
+        //if (!debugMode) return;
         
         timer += Time.deltaTime;
 
-        if (timer >= interval && Input.GetKey(KeyCode.Space))
+        if (timer >= interval)
         {
             timer = 0f;
             OnExtinguisherUsed(1f);

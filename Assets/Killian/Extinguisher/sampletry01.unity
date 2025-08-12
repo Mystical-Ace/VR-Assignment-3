@@ -1928,6 +1928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3621,6 +3625,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireMain
       objectReference: {fileID: 0}
+    - target: {fileID: 4937732557079722876, guid: c5cb6da5eac38e94f9757295711e1bec, type: 3}
+      propertyPath: growRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937732557079722876, guid: c5cb6da5eac38e94f9757295711e1bec, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8992051510677994039, guid: c5cb6da5eac38e94f9757295711e1bec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16947079
@@ -4818,6 +4830,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 365864940969700468, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365864940969700468, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 365864940969700468, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: InitialModule.gravityModifier.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473109540217257727, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: sprayAction
+      value: 
+      objectReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 3726522112872537260, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5709396145762239916, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
       propertyPath: m_Name
       value: FireExtinguisher
@@ -4861,6 +4893,14 @@ PrefabInstance:
     - target: {fileID: 7164222060918319973, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259853206055897975, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: douseRate
+      value: 43.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259853206055897975, guid: 34f5c03bd5a5a7e4abc5474d928b8488, type: 3}
+      propertyPath: sprayDistance
+      value: 35.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
