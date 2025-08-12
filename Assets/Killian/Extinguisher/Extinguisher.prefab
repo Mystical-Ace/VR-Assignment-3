@@ -654,7 +654,6 @@ GameObject:
   - component: {fileID: 1655122562326815516}
   - component: {fileID: 7208561003801899313}
   - component: {fileID: 188692809517628880}
-  - component: {fileID: 7022793113935732166}
   - component: {fileID: 550594208453918426}
   - component: {fileID: 4339822192251835366}
   - component: {fileID: 8849690742853957113}
@@ -795,7 +794,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.07894516
+        value: 0.033025857
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -956,18 +955,6 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2925793296304368396}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8849690742853957113}
         m_TargetAssemblyTypeName: ExtinguisherStat, Assembly-CSharp
         m_MethodName: SetSpray
@@ -995,18 +982,6 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2925793296304368396}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8849690742853957113}
         m_TargetAssemblyTypeName: ExtinguisherStat, Assembly-CSharp
         m_MethodName: SetSpray
@@ -1084,22 +1059,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &7022793113935732166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7809490273875800365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea6b798c9db51e4ea2e431e2b2b4849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nozzleInteractable: {fileID: 7573261267908081045}
-  extinguisherSprayScript: {fileID: 550594208453918426}
-  sprayAction: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  sprayParticles: {fileID: 2925793296304368396}
 --- !u!114 &550594208453918426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,10 +1072,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nozzle: {fileID: 5642951651587813534}
-  sprayDistance: 25
-  douseRate: 50
+  sprayDistance: 10
+  douseRate: 15
   sprayActive: 0
   NozOffset: 0.5
+  sprayParticles: {fileID: 2925793296304368396}
+  extinguisherStat: {fileID: 8849690742853957113}
 --- !u!65 &4339822192251835366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1224,6 +1185,10 @@ PrefabInstance:
     - target: {fileID: 8659238077094101109, guid: 57571292c48292742bfe0ebc4a0a8843, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659238077094101109, guid: 57571292c48292742bfe0ebc4a0a8843, type: 3}
+      propertyPath: simulationSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8659238077094101109, guid: 57571292c48292742bfe0ebc4a0a8843, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar

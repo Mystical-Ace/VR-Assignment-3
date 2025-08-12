@@ -7,6 +7,10 @@ public class ExtinguisherSpray : MonoBehaviour
     public float douseRate = 25f;
     public bool sprayActive;
     public float NozOffset = .5f;
+    public ParticleSystem sprayParticles;
+    [SerializeField] private ExtinguisherStat extinguisherStat;
+
+
 
     public void SetExSpray(bool Exspray)
     {
@@ -15,9 +19,20 @@ public class ExtinguisherSpray : MonoBehaviour
     //Tests
     private void Update()
     {
-        if (sprayActive == true)
+        if (sprayActive == true && extinguisherStat.enabled == true)
         {
             PerformSpray();
+            if (sprayParticles != null && !sprayParticles.isPlaying)
+            {
+                sprayParticles.Play();
+            }
+        }
+        else
+        {
+            if (sprayParticles != null && sprayParticles.isPlaying)
+            {
+                sprayParticles.Stop();
+            }
         }
     }
     public void PerformSpray()

@@ -1536,13 +1536,9 @@ PrefabInstance:
       value: FireMain (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4937732557079722876, guid: c5cb6da5eac38e94f9757295711e1bec, type: 3}
-      propertyPath: growRate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937732557079722876, guid: c5cb6da5eac38e94f9757295711e1bec, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
+      propertyPath: fireBlock
+      value: 
+      objectReference: {fileID: 1012292028}
     - target: {fileID: 8992051510677994039, guid: c5cb6da5eac38e94f9757295711e1bec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.858
